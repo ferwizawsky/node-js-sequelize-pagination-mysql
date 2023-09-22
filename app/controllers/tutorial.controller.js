@@ -1,5 +1,6 @@
 const db = require("../models");
 const Tutorial = db.tutorials;
+const Comment = db.comments;
 const Op = db.Sequelize.Op;
 
 const getPagination = (page, size) => {
@@ -22,7 +23,7 @@ exports.create = (req, res) => {
   // Validate request
   if (!req.body.title) {
     res.status(400).send({
-      message: "Content can not be empty!"
+      message: "Content can not be empty!",
     });
     return;
   }
@@ -31,19 +32,35 @@ exports.create = (req, res) => {
   const tutorial = {
     title: req.body.title,
     description: req.body.description,
-    published: req.body.published ? req.body.published : false
+    published: req.body.published ? req.body.published : false,
   };
 
   // Save Tutorial in the database
   Tutorial.create(tutorial)
-    .then(data => {
+    .then((data) => {
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Tutorial."
+          err.message || "Some error occurred while creating the Tutorial.",
       });
+    });
+};
+
+// Create and Save new Comments
+exports.createComment = (req, res) => {
+  return Comment.create({
+    name: req.body.name,
+    text: req.body.text,
+    tutorialId: req.body.tutorialId,
+  })
+    .then((comment) => {
+      console.log(">> Created comment: " + JSON.stringify(comment, null, 4));
+      return res.send(comment);
+    })
+    .catch((err) => {
+      console.log(">> Error while creating comment: ", err);
     });
 };
 
@@ -54,15 +71,27 @@ exports.findAll = (req, res) => {
 
   const { limit, offset } = getPagination(page, size);
 
-  Tutorial.findAndCountAll({ where: condition, limit, offset })
-    .then(data => {
+  Tutorial.findAndCountAll({
+    where: condition,
+    limit,
+    offset,
+    include: [
+      {
+        model: Comment,
+        as: "comments", // Alias for the association
+        required: false,
+        attributes: ["id", "name", "text", "createdAt"],
+      },
+    ],
+  })
+    .then((data) => {
       const response = getPagingData(data, page, limit);
       res.send(response);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving tutorials."
+          err.message || "Some error occurred while retrieving tutorials.",
       });
     });
 };
@@ -72,12 +101,12 @@ exports.findOne = (req, res) => {
   const id = req.params.id;
 
   Tutorial.findByPk(id)
-    .then(data => {
+    .then((data) => {
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: "Error retrieving Tutorial with id=" + id
+        message: "Error retrieving Tutorial with id=" + id,
       });
     });
 };
@@ -87,22 +116,22 @@ exports.update = (req, res) => {
   const id = req.params.id;
 
   Tutorial.update(req.body, {
-    where: { id: id }
+    where: { id: id },
   })
-    .then(num => {
+    .then((num) => {
       if (num == 1) {
         res.send({
-          message: "Tutorial was updated successfully."
+          message: "Tutorial was updated successfully.",
         });
       } else {
         res.send({
-          message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found or req.body is empty!`
+          message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found or req.body is empty!`,
         });
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: "Error updating Tutorial with id=" + id
+        message: "Error updating Tutorial with id=" + id,
       });
     });
 };
@@ -112,22 +141,22 @@ exports.delete = (req, res) => {
   const id = req.params.id;
 
   Tutorial.destroy({
-    where: { id: id }
+    where: { id: id },
   })
-    .then(num => {
+    .then((num) => {
       if (num == 1) {
         res.send({
-          message: "Tutorial was deleted successfully!"
+          message: "Tutorial was deleted successfully!",
         });
       } else {
         res.send({
-          message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
+          message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`,
         });
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: "Could not delete Tutorial with id=" + id
+        message: "Could not delete Tutorial with id=" + id,
       });
     });
 };
@@ -136,15 +165,15 @@ exports.delete = (req, res) => {
 exports.deleteAll = (req, res) => {
   Tutorial.destroy({
     where: {},
-    truncate: false
+    truncate: false,
   })
-    .then(nums => {
+    .then((nums) => {
       res.send({ message: `${nums} Tutorials were deleted successfully!` });
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all tutorials."
+          err.message || "Some error occurred while removing all tutorials.",
       });
     });
 };
@@ -155,14 +184,14 @@ exports.findAllPublished = (req, res) => {
   const { limit, offset } = getPagination(page, size);
 
   Tutorial.findAndCountAll({ where: { published: true }, limit, offset })
-    .then(data => {
+    .then((data) => {
       const response = getPagingData(data, page, limit);
       res.send(response);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving tutorials."
+          err.message || "Some error occurred while retrieving tutorials.",
       });
     });
 };

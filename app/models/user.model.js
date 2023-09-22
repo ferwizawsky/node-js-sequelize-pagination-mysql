@@ -6,14 +6,15 @@ module.exports = (sequelize, Sequelize) => {
       primaryKey: true,
       type: Sequelize.BIGINT,
     },
-    title: {
+    name: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
+    username: {
       type: Sequelize.STRING,
     },
-    description: {
+    password: {
       type: Sequelize.STRING,
-    },
-    published: {
-      type: Sequelize.BOOLEAN,
     },
   });
 
