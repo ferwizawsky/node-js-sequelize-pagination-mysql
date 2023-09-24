@@ -1,6 +1,5 @@
 const db = require("../models");
-const Tutorial = db.tutorials;
-const User = db.users;
+const Tutorial = db.users;
 const Comment = db.comments;
 const Op = db.Sequelize.Op;
 
@@ -82,14 +81,7 @@ exports.findAll = (req, res) => {
         as: "comments", // Alias for the association
         required: false,
         attributes: ["id", "name", "text", "createdAt"],
-        include: [
-          {
-            model: User,
-            as: "user",
-            required: false,
-            attributes: ["username"],
-          },
-        ], // Include User model and select specific attributes
+        include: [{ model: User, attributes: ["username", "email"] }], // Include User model and select specific attributes
       },
     ],
   })

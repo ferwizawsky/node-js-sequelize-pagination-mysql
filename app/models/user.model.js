@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const Tutorial = sequelize.define("tutorial", {
+  const Tutorial = sequelize.define("user", {
     id: {
       allowNull: false,
       autoIncrement: true,

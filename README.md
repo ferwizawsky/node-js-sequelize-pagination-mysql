@@ -1,9 +1,19 @@
 # Node.js Express: Pagination with Sequelize and MySQL
 
+Installation
+
+# npm install
+
+# copy db.config.js.example and change to db.config.js
+
+# node server.js
+
 For more detail, please visit:
+
 > [Server side Pagination in Node.js with Sequelize and MySQL](https://www.bezkoder.com/node-js-sequelize-pagination-mysql/)
 
 Front-end that works well with this Back-end:
+
 > [React Pagination with API using Material-UI](https://www.bezkoder.com/react-pagination-material-ui/)
 
 > [React Table Pagination with react-table 7](https://www.bezkoder.com/react-table-pagination-server-side/)
@@ -25,6 +35,7 @@ Front-end that works well with this Back-end:
 > [Vuetify Pagination (Server side) example](https://www.bezkoder.com/vuetify-pagination-server-side/)
 
 More Practice:
+
 > [Build Node.js Rest APIs with Express, Sequelize & MySQL](https://www.bezkoder.com/node-js-express-sequelize-mysql/)
 
 > [Node.js JWT Authentication & Authorization example](https://www.bezkoder.com/node-js-jwt-authentication-mysql/)
@@ -32,11 +43,13 @@ More Practice:
 > [Deploying/Hosting Node.js app on Heroku with MySQL database](https://www.bezkoder.com/deploy-node-js-app-heroku-cleardb-mysql/)
 
 Associations:
+
 > [Sequelize Associations: One-to-Many Relationship example](https://www.bezkoder.com/sequelize-associate-one-to-many/)
 
 > [Sequelize Associations: Many-to-Many Relationship example](https://www.bezkoder.com/sequelize-associate-many-to-many/)
 
 Fullstack:
+
 > [Vue.js + Node.js + Express + MySQL example](https://www.bezkoder.com/vue-js-node-js-express-mysql-crud-example/)
 
 > [Vue.js + Node.js + Express + MongoDB example](https://www.bezkoder.com/vue-node-express-mongodb-mevn-crud/)
@@ -56,6 +69,7 @@ Fullstack:
 > [React + Node.js + Express + MySQL example](https://www.bezkoder.com/react-node-express-mysql/)
 
 Integration (run back-end & front-end on same server/port)
+
 > [Integrate React with Node.js Restful Services](https://www.bezkoder.com/integrate-react-express-same-server-port/)
 
 > [Integrate Angular with Node.js Restful Services](https://www.bezkoder.com/integrate-angular-12-node-js/)
@@ -63,11 +77,13 @@ Integration (run back-end & front-end on same server/port)
 > [Integrate Vue with Node.js Restful Services](https://www.bezkoder.com/serve-vue-app-express/)
 
 ## Project setup
+
 ```
 npm install
 ```
 
 ### Run
+
 ```
 node server.js
 ```

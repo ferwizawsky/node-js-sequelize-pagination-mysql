@@ -21,11 +21,17 @@ db.sequelize = sequelize;
 
 db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 db.comments = require("./comment.model.js")(sequelize, Sequelize);
+db.users = require("./user.model.js")(sequelize, Sequelize);
 
 db.tutorials.hasMany(db.comments, { as: "comments" });
+db.users.hasMany(db.comments, { as: "comments" });
 db.comments.belongsTo(db.tutorials, {
   foreignKey: "tutorialId",
   as: "tutorial",
+});
+db.comments.belongsTo(db.users, {
+  foreignKey: "userId",
+  as: "user",
 });
 
 module.exports = db;
