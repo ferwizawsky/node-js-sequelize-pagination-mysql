@@ -87,7 +87,9 @@ exports.findAll = (req, res) => {
             model: User,
             as: "user",
             required: false,
-            attributes: ["username"],
+            attributes: {
+              exclude: ["password"],
+            },
           },
         ], // Include User model and select specific attributes
       },

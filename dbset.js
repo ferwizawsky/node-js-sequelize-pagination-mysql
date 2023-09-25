@@ -1,11 +1,28 @@
 const db = require("./app/models");
+const fs = require("fs");
+
 // drop the table if it already exists
 db.sequelize.sync({ force: true }).then(() => {
   console.log("Drop and re-sync db.");
+
+  // const sqlFilePath = "./indonesia.sql";
+  // importSQLFile(sqlFilePath);
+
   addUser();
   addTutorial();
   addComment();
 });
+
+// Function to import SQL file
+async function importSQLFile(filePath) {
+  try {
+    const sql = fs.readFileSync(filePath, "utf8");
+    await db.sequelize.query(sql);
+    console.log("Database imported successfully");
+  } catch (error) {
+    console.error("Error importing database:", error);
+  }
+}
 
 function addComment() {
   const comment = db.comments;
@@ -16,10 +33,7 @@ function addComment() {
       tutorialId: x + 1,
       userId: x + 1,
     };
-    comment
-      .create(payload)
-      .then((data) => {})
-      .catch((err) => {});
+    comment.create(payload);
   }
 }
 
@@ -31,10 +45,7 @@ function addTutorial() {
       description: "Description Tutorial " + x,
       published: true,
     };
-    tutorial
-      .create(payload)
-      .then((data) => {})
-      .catch((err) => {});
+    tutorial.create(payload);
   }
 }
 
@@ -46,8 +57,6 @@ function addUser() {
       username: "ferenyr" + x,
       password: "test123",
     };
-    User.create(payload)
-      .then((data) => {})
-      .catch((err) => {});
+    User.create(payload);
   }
 }

@@ -14,7 +14,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   },
 });
 
-const db = {};
+let db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
@@ -33,5 +33,10 @@ db.comments.belongsTo(db.users, {
   foreignKey: "userId",
   as: "user",
 });
+
+db = {
+  db,
+  ...require("./indonesia/index.js")(db),
+};
 
 module.exports = db;
