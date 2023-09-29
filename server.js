@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
-
 const app = express();
+const dotenv = require("dotenv");
+dotenv.config();
 
 var corsOptions = {
   origin: "http://localhost:8081",
@@ -15,8 +16,6 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-const db = require("./app/models");
-
 // db.sequelize.sync()
 // .then(() => {
 //   console.log("Synced db.");
@@ -24,12 +23,19 @@ const db = require("./app/models");
 // .catch((err) => {
 //   console.log("Failed to sync db: " + err.message);
 // });
-app.get("/", (req, res) => {});
+app.get("/", (req, res) => {
+  console.log(res);
+  return res.json({
+    message: "Hello There",
+  });
+});
 
+require("./app/routes/auth.routes")(app);
 require("./app/routes/turorial.routes")(app);
 require("./app/routes/region.routes")(app);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
+  console.log(process.env.DB_NAME);
   console.log(`Server is running on port ${PORT}.`);
 });

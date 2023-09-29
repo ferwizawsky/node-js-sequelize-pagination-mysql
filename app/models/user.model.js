@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const Tutorial = sequelize.define("user", {
+  const User = sequelize.define("user", {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -17,6 +17,12 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING,
     },
   });
+  // Define the toJSON method to exclude the password field
+  User.prototype.toJSON = function () {
+    const values = Object.assign({}, this.get());
+    delete values.password;
+    return values;
+  };
 
-  return Tutorial;
+  return User;
 };

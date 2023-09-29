@@ -97,7 +97,10 @@ exports.findAll = (req, res) => {
   })
     .then((data) => {
       const response = getPagingData(data, page, limit);
-      res.send(response);
+      res.send({
+        data: response,
+        user: req.user,
+      });
     })
     .catch((err) => {
       res.status(500).send({

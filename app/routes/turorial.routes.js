@@ -1,3 +1,5 @@
+const authenticateToken = require("../../middleware/auth");
+
 module.exports = (app) => {
   const tutorials = require("../controllers/tutorial.controller.js");
 
@@ -9,7 +11,7 @@ module.exports = (app) => {
   router.post("/comment", tutorials.createComment);
 
   // Retrieve all Tutorials
-  router.get("/", tutorials.findAll);
+  router.get("/", authenticateToken, tutorials.findAll);
 
   // Retrieve all published Tutorials
   router.get("/published", tutorials.findAllPublished);
