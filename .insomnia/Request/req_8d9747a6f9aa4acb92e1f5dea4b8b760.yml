@@ -1,0 +1,31 @@
+_id: req_8d9747a6f9aa4acb92e1f5dea4b8b760
+type: Request
+parentId: fld_7abd44c6e6dd48c996889b627878b450
+modified: 1696156942427
+created: 1696147794090
+url: "{{ _.url }}auth/profile"
+name: Profile
+description: ""
+method: POST
+body:
+  mimeType: application/x-www-form-urlencoded
+  params:
+    - id: pair_16297290c8864c67a3549d0f1974b0f8
+      name: refreshToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsIm5hbWUiOm51bGwsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlSWQiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjMtMTAtMDFUMTA6Mzg6MTAuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMTAtMDFUMTA6Mzg6MTAuMDAwWiIsImlhdCI6MTY5NjE1NjY5NiwiZXhwIjoxNjk2MTYwMjk2fQ.rSzNR7Q7WnHYKyFdztnqX2o5TNX10HykU850mFcCnkQ
+      description: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/x-www-form-urlencoded
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1695886123961.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
