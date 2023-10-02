@@ -1,0 +1,27 @@
+_id: req_ca0c699c87924ee693f1f64af244761e
+type: Request
+parentId: fld_d1076ca8b1cb42bc91cce76d4a91224b
+modified: 1695631943885
+created: 1695620610883
+url: "{{ _.url }}region/district?size=100000"
+name: Index District
+description: ""
+method: GET
+body: {}
+parameters:
+  - id: pair_e7cd1613536e49d5bf77659fa064139c
+    name: name
+    value: kalitidu
+    description: ""
+headers:
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1695306559980.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

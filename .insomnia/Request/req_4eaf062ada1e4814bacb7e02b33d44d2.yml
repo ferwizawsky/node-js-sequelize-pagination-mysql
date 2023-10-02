@@ -1,0 +1,35 @@
+_id: req_4eaf062ada1e4814bacb7e02b33d44d2
+type: Request
+parentId: fld_7abd44c6e6dd48c996889b627878b450
+modified: 1696173505771
+created: 1696167909073
+url: "{{ _.url }}auth/refresh-token"
+name: Refresh Token
+description: ""
+method: POST
+body:
+  mimeType: application/x-www-form-urlencoded
+  params:
+    - id: pair_16297290c8864c67a3549d0f1974b0f8
+      name: refreshToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOiJyZWZyZXNoIiwiaWQiOjExLCJuYW1lIjpudWxsLCJ1c2VybmFtZSI6InRlc3QxIiwicm9sZUlkIjpudWxsLCJpYXQiOjE2OTYxNjc3NTksImV4cCI6MTY5Njc3MjU1OX0.oAATKbryYYW-qyT1OafBP2s7DEq1jQk64Wz2VEbPblw
+      description: ""
+    - id: pair_b5df92d58cb84dcdb0cfbc060d201744
+      name: token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOiJhdXRoIiwiaWQiOjExLCJuYW1lIjpudWxsLCJ1c2VybmFtZSI6InRlc3QxIiwicm9sZUlkIjpudWxsLCJpYXQiOjE2OTYxNjc3NTksImV4cCI6MTY5NjE3MTM1OX0.Trimjc8yz6PBkUwMJT5Q4R8gINlrAaCDBaAHxsKQVHs
+      description: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/x-www-form-urlencoded
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1695755292974.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

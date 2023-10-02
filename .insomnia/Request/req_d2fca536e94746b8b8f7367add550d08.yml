@@ -1,0 +1,35 @@
+_id: req_d2fca536e94746b8b8f7367add550d08
+type: Request
+parentId: fld_d1076ca8b1cb42bc91cce76d4a91224b
+modified: 1695631891790
+created: 1695621146617
+url: "{{ _.url }}region/village"
+name: Index Village
+description: ""
+method: GET
+body: {}
+parameters:
+  - id: pair_07c534111f264b188ddafc3a7f196897
+    name: detail
+    value: "1"
+    description: ""
+  - id: pair_7d4541e85b354c3d8baafbbdd7a2d17b
+    name: size
+    value: "10000"
+    description: ""
+  - id: pair_11240dbdac0c405ba152c8687300124b
+    name: name
+    value: ""
+    description: ""
+headers:
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1695254849221.875
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,35 @@
+_id: req_ff064dbc9a0f45f38a1a93ef2cb3de61
+type: Request
+parentId: fld_7abd44c6e6dd48c996889b627878b450
+modified: 1696156695772
+created: 1696146925224
+url: "{{ _.url }}auth/login"
+name: Login
+description: ""
+method: POST
+body:
+  mimeType: application/x-www-form-urlencoded
+  params:
+    - id: pair_16297290c8864c67a3549d0f1974b0f8
+      name: username
+      value: test1
+      description: ""
+    - id: pair_d27270e40d6449f4809b63d371c91ce4
+      name: password
+      value: test
+      description: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/x-www-form-urlencoded
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication: {}
+metaSortKey: -1696147785936
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
