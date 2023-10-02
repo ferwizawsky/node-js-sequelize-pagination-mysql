@@ -16,6 +16,10 @@ module.exports = (sequelize, Sequelize) => {
     password: {
       type: Sequelize.STRING,
     },
+    roleId: {
+      type: Sequelize.INTEGER,
+      default: 0,
+    },
   });
   // Define the toJSON method to exclude the password field
   User.prototype.toJSON = function () {

@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const expressValidator = require("express-validator");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -9,11 +10,8 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-// parse requests of content-type - application/json
+app.use(expressValidator());
 app.use(express.json());
-
-// parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
 // db.sequelize.sync()
@@ -36,6 +34,5 @@ require("./app/routes/region.routes")(app);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(process.env.DB_NAME);
   console.log(`Server is running on port ${PORT}.`);
 });

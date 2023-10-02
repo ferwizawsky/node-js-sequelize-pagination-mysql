@@ -34,9 +34,16 @@ db.comments.belongsTo(db.users, {
   as: "user",
 });
 
-db = {
-  db,
-  ...require("./indonesia/index.js")(db),
-};
+const farm = require("./farmer.model.js");
+db.farmer = farm.farmer;
+db.land = farm.land;
+db.farmerGroup = farm.farmerGroup;
+db.plant = farm.plant;
+db.plantData = farm.plantData;
+
+// db = {
+//   db,
+//   ...require("./indonesia/index.js")(db),
+// };
 
 module.exports = db;

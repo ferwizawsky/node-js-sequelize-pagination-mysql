@@ -1,3 +1,6 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
 const db = require("./app/models");
 const fs = require("fs");
 
@@ -5,14 +8,14 @@ const fs = require("fs");
 db.sequelize.sync({ force: true }).then(() => {
   console.log("Drop and re-sync db.");
 
-  jsonImport("./seeder/province.json", db.province);
-  jsonImport("./seeder/regency.json", db.regency);
-  jsonImport("./seeder/district.json", db.district);
-  jsonImport("./seeder/village.json", db.village);
+  // jsonImport("./seeder/province.json", db.province);
+  // jsonImport("./seeder/regency.json", db.regency);
+  // jsonImport("./seeder/district.json", db.district);
+  // jsonImport("./seeder/village.json", db.village);
 
   addUser();
   addTutorial();
-  addComment();
+  // addComment();
 });
 
 function jsonImport(url, dbmodel) {
@@ -60,14 +63,19 @@ function addTutorial() {
   }
 }
 
-function addUser() {
-  const User = db.users;
-  for (let x = 0; x < 10; x++) {
-    const payload = {
-      name: "Ferenyr " + x,
-      username: "ferenyr" + x,
-      password: "test123",
-    };
-    User.create(payload);
-  }
+async function addUser() {
+  try {
+    const bcrypt = require("bcrypt");
+    const User = db.users;
+    for (let x = 0; x < 10; x++) {
+      const hashedPassword = await bcrypt.hash("test123", 10);
+      const payload = {
+        name: "Ferenyr " + x,
+        username: "ferenyr" + x,
+        password: hashedPassword,
+        roleId: 0,
+      };
+      User.create(payload);
+    }
+  } catch (error) {}
 }
