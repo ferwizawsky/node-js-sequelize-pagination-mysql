@@ -14,7 +14,7 @@ db.sequelize.sync({ force: true }).then(() => {
   // jsonImport("./seeder/village.json", db.village);
 
   addUser();
-  addTutorial();
+  // addTutorial();
   // addComment();
 });
 

@@ -1,4 +1,4 @@
-const authenticateToken = require("../../middleware/auth");
+const authenticateToken = require("../../../middleware/auth");
 
 module.exports = (app) => {
   var router = require("express").Router();
@@ -6,7 +6,7 @@ module.exports = (app) => {
 };
 
 function setRouter(router, app, title) {
-  const controller = require(`../controllers/farm/${title}.controller.js`);
+  const controller = require(`../../controllers/farm/${title}.controller.js`);
   router.get("/", controller.index);
   router.post("/", controller.create);
   router.put("/:id", controller.update);
