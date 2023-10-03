@@ -1,4 +1,4 @@
-exports.farmer = async (sequelize, Sequelize) => {
+module.exports.farmer = (sequelize, Sequelize) => {
   return sequelize.define("farmer", {
     id: {
       allowNull: false,
@@ -18,7 +18,7 @@ exports.farmer = async (sequelize, Sequelize) => {
   });
 };
 
-exports.land = async (sequelize, Sequelize) => {
+module.exports.land = (sequelize, Sequelize) => {
   return sequelize.define("land", {
     id: {
       allowNull: false,
@@ -38,7 +38,7 @@ exports.land = async (sequelize, Sequelize) => {
   });
 };
 
-exports.farmerGroup = async (sequelize, Sequelize) => {
+module.exports.farmerGroup = (sequelize, Sequelize) => {
   return sequelize.define("farmerGroup", {
     id: {
       allowNull: false,
@@ -64,7 +64,7 @@ exports.farmerGroup = async (sequelize, Sequelize) => {
   });
 };
 
-exports.plant = async (sequelize, Sequelize) => {
+module.exports.plant = (sequelize, Sequelize) => {
   return sequelize.define("plant", {
     id: {
       allowNull: false,
@@ -78,7 +78,7 @@ exports.plant = async (sequelize, Sequelize) => {
   });
 };
 
-exports.plantData = async (sequelize, Sequelize) => {
+module.exports.plantData = (sequelize, Sequelize) => {
   return sequelize.define("plantData", {
     id: {
       allowNull: false,
