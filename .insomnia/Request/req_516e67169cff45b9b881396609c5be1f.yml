@@ -1,0 +1,37 @@
+_id: req_516e67169cff45b9b881396609c5be1f
+type: Request
+parentId: fld_7c11d0f40ada4c6da0104db31f01224f
+modified: 1696238015996
+created: 1696234088246
+url: "{{ _.url }}farm/farmer"
+name: Create
+description: ""
+method: POST
+body:
+  mimeType: application/x-www-form-urlencoded
+  params:
+    - id: pair_48386980eb284f97b99d77a787083998
+      name: gender
+      value: P
+      description: ""
+    - id: pair_069ef55f3fe748389279b28a5ea8f8d9
+      name: total
+      value: "1000"
+      description: ""
+    - id: pair_e2740e2520e840a5991d948107d34a69
+      name: year
+      value: "2021"
+      description: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/x-www-form-urlencoded
+authentication: {}
+metaSortKey: -1696231560355
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

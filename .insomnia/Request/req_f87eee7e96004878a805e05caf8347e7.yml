@@ -1,0 +1,42 @@
+_id: req_f87eee7e96004878a805e05caf8347e7
+type: Request
+parentId: fld_7c11d0f40ada4c6da0104db31f01224f
+modified: 1696238675820
+created: 1696234088250
+url: "{{ _.url }}farm/farmer/1"
+name: Update
+description: ""
+method: PUT
+body:
+  mimeType: application/x-www-form-urlencoded
+  params:
+    - id: pair_48386980eb284f97b99d77a787083998
+      name: gender
+      value: L
+      description: ""
+    - id: pair_fdcd72e72967498f842127e37cd98cdc
+      name: total
+      value: "1000"
+      description: ""
+    - id: pair_1f38219129f94b7bb4881f55ebcab5ce
+      name: year
+      value: "2021"
+      description: ""
+      disabled: false
+    - id: pair_f21f175f02604632915bff65a3029e49
+      name: villageId
+      value: "1"
+      description: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/x-www-form-urlencoded
+authentication: {}
+metaSortKey: -1696231556351.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

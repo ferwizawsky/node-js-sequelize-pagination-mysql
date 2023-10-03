@@ -1,0 +1,21 @@
+_id: req_778b897220bd4f50822a93b0f5009007
+type: Request
+parentId: fld_836c4259c1e94eceb267ddc9d39c9270
+modified: 1696231605061
+created: 1696231568362
+url: "{{ _.url }}farm/plant"
+name: Index
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1696231568362
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,29 @@
+_id: req_8a1772eaff85426881f5a21a495ffe51
+type: Request
+parentId: fld_836c4259c1e94eceb267ddc9d39c9270
+modified: 1696233706317
+created: 1696233698900
+url: "{{ _.url }}farm/plant/1"
+name: Update
+description: ""
+method: PUT
+body:
+  mimeType: application/x-www-form-urlencoded
+  params:
+    - id: pair_48386980eb284f97b99d77a787083998
+      name: name
+      value: Padi
+      description: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/x-www-form-urlencoded
+authentication: {}
+metaSortKey: -1696231556351.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
