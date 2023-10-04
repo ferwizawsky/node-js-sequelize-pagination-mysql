@@ -12,10 +12,8 @@ db.sequelize.sync({ force: true }).then(() => {
   // jsonImport("./seeder/regency.json", db.regency);
   // jsonImport("./seeder/district.json", db.district);
   // jsonImport("./seeder/village.json", db.village);
-
+  addVillage();
   addUser();
-  // addTutorial();
-  // addComment();
 });
 
 function jsonImport(url, dbmodel) {
@@ -38,28 +36,13 @@ async function importData(products, dbmodel) {
   }
 }
 
-function addComment() {
-  const comment = db.comments;
+function addVillage() {
+  const data = db.village;
   for (let x = 0; x < 10; x++) {
     const payload = {
       name: "test",
-      text: "Testt Comment " + x,
-      tutorialId: x + 1,
-      userId: x + 1,
     };
-    comment.create(payload);
-  }
-}
-
-function addTutorial() {
-  const tutorial = db.tutorials;
-  for (let x = 0; x < 10; x++) {
-    const payload = {
-      title: "Judul Tutorial " + x,
-      description: "Description Tutorial " + x,
-      published: true,
-    };
-    tutorial.create(payload);
+    data.create(payload);
   }
 }
 

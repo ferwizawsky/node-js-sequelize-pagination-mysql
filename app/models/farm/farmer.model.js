@@ -26,9 +26,6 @@ module.exports.land = (sequelize, Sequelize) => {
       primaryKey: true,
       type: Sequelize.BIGINT,
     },
-    gender: {
-      type: Sequelize.STRING,
-    },
     total: {
       type: Sequelize.INTEGER,
     },
