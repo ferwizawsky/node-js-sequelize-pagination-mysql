@@ -17,7 +17,7 @@ const getPagingData = (list, page, limit) => {
 };
 
 exports.create = (req, res) => {
-  if (!req.body.gender || !req.body.total || !req.body.year) {
+  if (!req.body.name || !req.body.noReg || !req.body.year) {
     res.status(400).send({
       message: "Some data cannot be empty!",
     });

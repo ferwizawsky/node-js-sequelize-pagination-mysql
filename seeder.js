@@ -7,12 +7,10 @@ const fs = require("fs");
 // drop the table if it already exists
 db.sequelize.sync({ force: true }).then(() => {
   console.log("Drop and re-sync db.");
-
-  // jsonImport("./seeder/province.json", db.province);
-  // jsonImport("./seeder/regency.json", db.regency);
-  // jsonImport("./seeder/district.json", db.district);
-  // jsonImport("./seeder/village.json", db.village);
-  addVillage();
+  jsonImport("./seeder/province.json", db.province);
+  jsonImport("./seeder/regency.json", db.regency);
+  jsonImport("./seeder/district.json", db.district);
+  jsonImport("./seeder/village.json", db.village);
   addUser();
 });
 
@@ -36,15 +34,15 @@ async function importData(products, dbmodel) {
   }
 }
 
-function addVillage() {
-  const data = db.village;
-  for (let x = 0; x < 10; x++) {
-    const payload = {
-      name: "test",
-    };
-    data.create(payload);
-  }
-}
+// function addVillage() {
+//   const data = db.village;
+//   for (let x = 0; x < 10; x++) {
+//     const payload = {
+//       name: "test",
+//     };
+//     data.create(payload);
+//   }
+// }
 
 async function addUser() {
   try {

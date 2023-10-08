@@ -1,11 +1,10 @@
 const db = require("../../models");
 const Op = db.Sequelize.Op;
-const model = db.farmers;
+const model = db.lands;
 
 const getPagination = (page, size) => {
   const limit = size ? +size : 3;
   const offset = page ? page * limit : 0;
-
   return { limit, offset };
 };
 
@@ -17,7 +16,7 @@ const getPagingData = (list, page, limit) => {
 };
 
 exports.create = (req, res) => {
-  if (!req.body.gender || !req.body.total || !req.body.year) {
+  if (!req.body.total || !req.body.year) {
     res.status(400).send({
       message: "Some data cannot be empty!",
     });

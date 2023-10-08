@@ -1,6 +1,6 @@
 const db = require("../../models");
 const Op = db.Sequelize.Op;
-const model = db.farmers;
+const dbmodel = db.plantDatas;
 
 const getPagination = (page, size) => {
   const limit = size ? +size : 3;
@@ -13,17 +13,20 @@ const getPagingData = (list, page, limit) => {
   const { count: totalItems, rows: data } = list;
   const currentPage = page ? +page : 0;
   const totalPages = Math.ceil(totalItems / limit);
+
   return { totalItems, data, totalPages, currentPage };
 };
 
 exports.create = (req, res) => {
-  if (!req.body.gender || !req.body.total || !req.body.year) {
+  // Validate request
+  if (!req.body.total || !req.body.plantId || !req.body.villageId) {
     res.status(400).send({
-      message: "Some data cannot be empty!",
+      message: "Data can not be empty!",
     });
     return;
   }
-  model
+
+  dbmodel
     .create(req.body)
     .then((data) => {
       res.send(data);
@@ -42,7 +45,7 @@ exports.index = (req, res) => {
 
   const { limit, offset } = getPagination(page, size);
 
-  model
+  dbmodel
     .findAndCountAll({
       where: condition,
       limit,
@@ -64,9 +67,25 @@ exports.index = (req, res) => {
     });
 };
 
+// Find a single Tutorial with an id
+// exports.findOne = (req, res) => {
+//   const id = req.params.id;
+
+//   Tutorial.findByPk(id)
+//     .then((data) => {
+//       res.send(data);
+//     })
+//     .catch((err) => {
+//       res.status(500).send({
+//         message: "Error retrieving Tutorial with id=" + id,
+//       });
+//     });
+// };
+
+// Update a Tutorial by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
-  model
+  dbmodel
     .update(req.body, {
       where: { id: id },
     })
@@ -82,17 +101,17 @@ exports.update = (req, res) => {
       }
     })
     .catch((err) => {
-      console.log(err);
       res.status(500).send({
-        message: "Error Update",
+        message: "Error updating Tutorial with id=" + id,
       });
     });
 };
 
+// Delete a Tutorial with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  model
+  dbmodel
     .destroy({
       where: { id: id },
     })

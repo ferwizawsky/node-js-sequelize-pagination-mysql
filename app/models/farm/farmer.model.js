@@ -83,9 +83,6 @@ module.exports.plantData = (sequelize, Sequelize) => {
       primaryKey: true,
       type: Sequelize.BIGINT,
     },
-    name: {
-      type: Sequelize.STRING,
-    },
     total: {
       type: Sequelize.INTEGER,
     },
