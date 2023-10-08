@@ -1,25 +1,25 @@
-_id: req_d6370cb8886745ef990dcc3ee98eb718
+_id: req_f1e3fd9a9fac4dea927e08384e3e8c69
 type: Request
-parentId: fld_836c4259c1e94eceb267ddc9d39c9270
-modified: 1696671230135
-created: 1696232386362
-url: "{{ _.url }}farm/plant"
-name: Create
+parentId: fld_c258b098e4874bf2b344fe8651b718f1
+modified: 1696671488835
+created: 1696670772608
+url: "{{ _.url }}farm/land/1"
+name: Update
 description: ""
-method: POST
+method: PUT
 body:
   mimeType: application/x-www-form-urlencoded
   params:
     - id: pair_48386980eb284f97b99d77a787083998
       name: name
-      value: Padis
+      value: Padi
       description: ""
 parameters: []
 headers:
   - name: Content-Type
     value: application/x-www-form-urlencoded
 authentication: {}
-metaSortKey: -1696231560355
+metaSortKey: -1696231556351.5
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

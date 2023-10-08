@@ -1,9 +1,9 @@
-_id: req_516e67169cff45b9b881396609c5be1f
+_id: req_d053cdba143d4f05b9d2b387793f7d20
 type: Request
-parentId: fld_7c11d0f40ada4c6da0104db31f01224f
-modified: 1696746298292
-created: 1696234088246
-url: "{{ _.url }}farm/farmer"
+parentId: fld_c258b098e4874bf2b344fe8651b718f1
+modified: 1696746241028
+created: 1696670772602
+url: "{{ _.url }}farm/land"
 name: Create
 description: ""
 method: POST
@@ -11,20 +11,20 @@ body:
   mimeType: application/x-www-form-urlencoded
   params:
     - id: pair_48386980eb284f97b99d77a787083998
-      name: gender
-      value: P
-      description: ""
-    - id: pair_069ef55f3fe748389279b28a5ea8f8d9
       name: total
-      value: "1000"
+      value: "5000"
       description: ""
-    - id: pair_e2740e2520e840a5991d948107d34a69
+    - id: pair_7ab8f315ff8247f7bfeb83668098656f
       name: year
       value: "2021"
       description: ""
-    - id: pair_27e4cec8bfff4211a69b325659668c6c
+    - id: pair_33677f11c9fe4564854015282bba4ae9
       name: villageId
       value: "3522210015"
+      description: ""
+    - id: pair_df2346e310244d93bb6ca34143e9a940
+      name: ""
+      value: ""
       description: ""
 parameters: []
 headers:

@@ -1,0 +1,21 @@
+_id: req_2f9d6eba7adc42ecab33b93d7556439d
+type: Request
+parentId: fld_731164745915440fa77a88cc3ef47ed2
+modified: 1696671169443
+created: 1696671156343
+url: "{{ _.url }}farm/plantData/1"
+name: Delete
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1696231564358.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
